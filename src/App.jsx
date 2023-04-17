@@ -1,6 +1,8 @@
 import MainContent from './components/MainContent';
 import logo from './assets/images/logo.png';
 
+// Just a random comment to test a commit message.
+
 function App() {
   return (
     <>
