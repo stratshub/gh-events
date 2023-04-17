@@ -1,5 +1,9 @@
 name: Events Demo 1
 on:
+  # By default PRs based on forks don't trigger, those need to be approve.
+  # That is because all people can create forks for a public repo, if they
+  # create PRs and we execute them in Github Actions that will use time of
+  # execution and will cost our money.
   pull_request:
     types:
       - opened
@@ -13,6 +17,7 @@ on:
       - main
       - 'dev-*' # dev-new, dev-this-is-new, etc.
       - 'feat/**' # feat/new, feat/new/button, etc.
+    # Triggers event only if at least one of this files changed, otherwise, not.
     paths:
       - '.github/workflows/*'
 jobs:
